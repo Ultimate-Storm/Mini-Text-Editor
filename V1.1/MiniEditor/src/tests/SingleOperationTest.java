@@ -24,50 +24,50 @@ public class SingleOperationTest {
 	
 	@Test
 	public void insertTest() {
-		Assert.assertEquals("", editor.getBuffer());
-		editor.editorInsert("Test");
-		Assert.assertEquals("Test", editor.getBuffer());
+		Assert.assertEquals("", editor.getBufferContents());
+		editor.insert("Test");
+		Assert.assertEquals("Test", editor.getBufferContents());
 	}
 	
 	@Test
 	public void copyTest() {
-		Assert.assertEquals("", editor.getBuffer());
-		editor.editorInsert("Test");
-		Assert.assertEquals("Test", editor.getBuffer());
+		Assert.assertEquals("", editor.getBufferContents());
+		editor.insert("Test");
+		Assert.assertEquals("Test", editor.getBufferContents());
 		editor.editorSelect(1, 3);
-		editor.editorCopy();
-		Assert.assertEquals("es", editor.getClipboard());
+		editor.copySelectedText();
+		Assert.assertEquals("es", editor.getClipboardContents());
 	}
 	
 	@Test
 	public void pasteTest() {
-		Assert.assertEquals("", editor.getBuffer());
-		editor.editorInsert("Test");
-		Assert.assertEquals("Test", editor.getBuffer());
+		Assert.assertEquals("", editor.getBufferContents());
+		editor.insert("Test");
+		Assert.assertEquals("Test", editor.getBufferContents());
 		editor.editorSelect(1,3);
-		editor.editorCopy();
-		Assert.assertEquals("es", editor.getClipboard());
+		editor.copySelectedText();
+		Assert.assertEquals("es", editor.getClipboardContents());
 		editor.editorSelect(0,0);
-		editor.editorPaste();
-		Assert.assertEquals("esTest", editor.getBuffer());
+		editor.pasteClipboard();
+		Assert.assertEquals("esTest", editor.getBufferContents());
 	}
 	
 	@Test
 	public void cutTest() {
-		Assert.assertEquals("", editor.getBuffer());
-		editor.editorInsert("Test");
-		Assert.assertEquals("Test", editor.getBuffer());
+		Assert.assertEquals("", editor.getBufferContents());
+		editor.insert("Test");
+		Assert.assertEquals("Test", editor.getBufferContents());
 		editor.editorSelect(1,3);
-		editor.editorCut();
-		Assert.assertEquals("es", editor.getClipboard());
-		Assert.assertEquals("Tt", editor.getBuffer());
+		editor.cutSelectedText();
+		Assert.assertEquals("es", editor.getClipboardContents());
+		Assert.assertEquals("Tt", editor.getBufferContents());
 	}
 	
 	@Test
 	public void selectTest() {
-		Assert.assertEquals("", editor.getBuffer());
+		Assert.assertEquals("", editor.getBufferContents());
 		Assert.assertEquals("", editor.getSelection().substring(0, editor.getSelection().indexOf('[')));
-		editor.editorInsert("Test");
+		editor.insert("Test");
 		Assert.assertEquals("", editor.getSelection().substring(0, editor.getSelection().indexOf('[')));
 		editor.editorSelect(1,3);
 		Assert.assertEquals("es", editor.getSelection().substring(0, editor.getSelection().indexOf('[')));
@@ -77,13 +77,13 @@ public class SingleOperationTest {
 	
 	@Test
 	public void deleteTest() {
-		Assert.assertEquals("", editor.getBuffer());
-		editor.editorInsert("Test");
-		Assert.assertEquals("Test", editor.getBuffer());
+		Assert.assertEquals("", editor.getBufferContents());
+		editor.insert("Test");
+		Assert.assertEquals("Test", editor.getBufferContents());
 		editor.editorSelect(1,3);
-		editor.editorDelete();
-		Assert.assertEquals("", editor.getClipboard());
-		Assert.assertEquals("Tt", editor.getBuffer());
+		editor.delete();
+		Assert.assertEquals("", editor.getClipboardContents());
+		Assert.assertEquals("Tt", editor.getBufferContents());
 	}
 	
 	@After

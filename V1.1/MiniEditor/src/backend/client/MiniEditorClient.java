@@ -55,7 +55,7 @@ public class MiniEditorClient {
 		invoker.action();
 	}
 	public String getBufferText() {
-		return editor.getBuffer();                  // Gets buffer from the receiver.
+		return editor.getBufferContents();                  // Gets buffer from the receiver.
 	}
 	public String getSelectionText() {
 		return editor.getSelection();               // Gets selection from the receiver.

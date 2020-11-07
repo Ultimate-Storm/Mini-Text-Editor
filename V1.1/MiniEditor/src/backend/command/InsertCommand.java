@@ -18,7 +18,7 @@ public class InsertCommand extends EditorCommand{
 	
 	@Override
 	public void execute() {                            // This concrete command gives its own definition of execute method
-		editor.editorInsert(textToInsert);
+		editor.insert(textToInsert);
 	}
 
 }

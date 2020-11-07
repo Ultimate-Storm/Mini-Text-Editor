@@ -15,6 +15,6 @@ public class DeleteCommand extends EditorCommand{
 	
 	@Override
 	public void execute() {                            // This concrete command gives its own definition of execute method
-		editor.editorDelete();
+		editor.delete();
 	}
 }

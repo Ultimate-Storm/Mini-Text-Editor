@@ -7,13 +7,48 @@ package backend.receiver;
  */
 public interface MiniEditor
 {
-	String getBuffer();                       // Method to return buffer content
-	String getSelection();                    // Method to return current selection
-	String getClipboard();                    // Method to return content of clipboard
-	void editorInsert(String substring);      // Method to insert text to MiniEditor
-	void editorSelect(int start, int stop);   // Method to select text from MiniEditor
-	void editorCopy();                        // Method to copy text from MiniEditor
-	void editorCut();                         // Method to cut text from MiniEditor
-	void editorPaste() ;                      // Method to paste text to MiniEditor
-	void editorDelete();                      // Method to delete text from MiniEditor
+	/**
+	 * Provides the whole contents of the buffer, as a string
+	 * @return a copy of the buffer's contents
+	 */
+	String getBufferContents();
+
+	String getSelection();
+
+	/**
+	 * Provides the clipboard contents
+	 * @return a copy of the clipboard's contents
+	 */
+	String getClipboardContents();
+
+	/**
+	 * Inserts a string in the buffer, which replaces the contents of the selection
+	 * @param substring the text to insert
+	 */
+	void insert(String substring);
+	void editorSelect(int start, int stop);
+
+	/**
+	 * Copies the text within the interval
+	 * specified by the selection control object
+	 * into the clipboard.
+	 */
+	void copySelectedText();
+	/**
+	 * Removes the text within the interval
+	 * specified by the selection control object,
+	 * from the buffer.
+	 */
+	void cutSelectedText();
+
+	/**
+	 * Replaces the text within the interval specified by the selection object with
+	 * the contents of the clipboard.
+	 */
+	void pasteClipboard();
+
+	/**
+	 * Removes the contents of the selection in the buffer
+	 */
+	void delete();
 }

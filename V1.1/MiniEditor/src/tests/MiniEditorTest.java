@@ -38,7 +38,7 @@ public class MiniEditorTest {
 	
 	@Test
 	public void bufferTest() {                                     // Test for buffer
-		Assert.assertEquals("", editor.getBuffer());
+		Assert.assertEquals("", editor.getBufferContents());
 	}
 	
 	@After
