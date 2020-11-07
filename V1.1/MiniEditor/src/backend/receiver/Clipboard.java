@@ -2,7 +2,7 @@ package backend.receiver;
 
 /**
  * Class to manage contents of clipboard of Minieditor.
- * @author mukrram
+ *
  *
  */
 public class Clipboard {

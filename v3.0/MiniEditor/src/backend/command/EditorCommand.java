@@ -3,7 +3,7 @@ package backend.command;
 import backend.MiniEditor;
 /**
  * Abstract class used between command and concrete commands.
- * @author mukrram
+ *
  *
  */
 public abstract class EditorCommand implements Command{

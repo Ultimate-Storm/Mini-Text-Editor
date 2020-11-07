@@ -2,7 +2,7 @@ package backend.command;
 
 /**
  * CopyCommand class for command design pattern.
- * @author mukrram
+ *
  *
  */
 import backend.MiniEditor;

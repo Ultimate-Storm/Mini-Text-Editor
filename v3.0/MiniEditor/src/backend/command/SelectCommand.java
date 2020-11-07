@@ -3,7 +3,7 @@ package backend.command;
 import backend.MiniEditor;
 /**
  * SelectCommand class for command design pattern.
- * @author mukrram
+ *
  *
  */
 public class SelectCommand extends EditorCommand{

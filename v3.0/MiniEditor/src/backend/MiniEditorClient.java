@@ -19,7 +19,7 @@ import backend.invoker.MiniEditorInvoker;
 
 /**
  * Class used as client for command design pattern
- * @author mukrram
+ *
  *
  */
 public class MiniEditorClient {

@@ -7,7 +7,7 @@ import backend.client.MiniEditorClient;
 
 /**
  * Front-end
- * @author mukrram
+ *
  *
  */
 public class MiniEditorTextInterfaceWithCommand {

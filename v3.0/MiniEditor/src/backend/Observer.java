@@ -2,7 +2,7 @@ package backend;
 
 /**
  * Interface used for observer design pattern
- * @author mukrram
+ *
  *
  */
 public interface Observer {

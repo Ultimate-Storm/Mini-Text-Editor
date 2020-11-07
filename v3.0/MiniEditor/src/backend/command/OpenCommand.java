@@ -3,7 +3,7 @@ package backend.command;
 import backend.MiniEditor;
 /**
  * OpenCommand class for command design pattern.
- * @author mukrram
+ *
  *
  */
 public class OpenCommand extends EditorCommand {

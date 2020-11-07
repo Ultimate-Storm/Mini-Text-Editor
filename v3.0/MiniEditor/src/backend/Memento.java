@@ -2,7 +2,7 @@ package backend;
 
 /**
  * Class used for memento design pattern
- * @author mukrram
+ *
  *
  */
 public class Memento {

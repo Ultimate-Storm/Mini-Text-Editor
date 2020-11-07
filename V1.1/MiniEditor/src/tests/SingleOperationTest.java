@@ -10,7 +10,7 @@ import backend.receiver.MiniEditorImpl;
 
 /**
  * To test single commands on miniEditor.
- * @author mukrram
+ *
  *
  */
 public class SingleOperationTest {

@@ -2,7 +2,7 @@ package backend;
 
 /**
  * Class created to manage clip board for Mini text editor
- * @author mukrram
+ *
  *
  */
 public class Clipboard {

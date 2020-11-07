@@ -2,7 +2,7 @@ package backend;
 
 /**
  * Class used as receiver for command design pattern
- * @author mukrram
+ *
  *
  */
 public interface MiniEditor

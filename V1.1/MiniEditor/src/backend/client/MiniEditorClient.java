@@ -13,7 +13,7 @@ import backend.receiver.MiniEditorImpl;
 
 /**
  * Client of Command design pattern.
- * @author mukrram
+ *
  *
  */
 public class MiniEditorClient {

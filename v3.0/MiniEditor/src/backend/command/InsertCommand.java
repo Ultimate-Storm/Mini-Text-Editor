@@ -4,7 +4,7 @@ import backend.MiniEditor;
 
 /**
  * InsertCommand class for command design pattern.
- * @author mukrram
+ *
  *
  */
 public class InsertCommand extends EditorCommand{

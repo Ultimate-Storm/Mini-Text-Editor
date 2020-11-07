@@ -3,7 +3,7 @@ package backend.command;
 import backend.MiniEditor;
 /**
  * UndoCommand class for command design pattern.
- * @author mukrram
+ *
  *
  */
 public class UndoCommand extends EditorCommand {

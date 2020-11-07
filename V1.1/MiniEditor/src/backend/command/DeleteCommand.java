@@ -4,7 +4,7 @@ import backend.receiver.MiniEditor;
 
 /**
  * Concrete command of Command design pattern
- * @author mukrram
+ *
  *
  */
 public class DeleteCommand extends EditorCommand{

@@ -4,7 +4,7 @@ import backend.command.Command;
 
 /**
  * MiniEditorInvoker class as invoker for command design pattern.
- * @author mukrram
+ *
  *
  */
 public class MiniEditorInvoker {

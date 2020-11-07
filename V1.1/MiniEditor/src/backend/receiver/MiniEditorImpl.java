@@ -4,7 +4,7 @@ import backend.exceptions.InvalidSelectionException;
 
 /**
  * Concrete Receiver of command design pattern
- * @author mukrram
+ *
  *
  */
 public class MiniEditorImpl implements MiniEditor{

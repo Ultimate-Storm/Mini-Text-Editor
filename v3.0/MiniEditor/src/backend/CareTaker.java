@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * Class used as care taker for memento design pattern
- * @author mukrram
+ *
  *
  */
 public class CareTaker {

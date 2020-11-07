@@ -3,7 +3,7 @@ package backend.command;
 
 /**
  * CutCommand class for command design pattern.
- * @author mukrram
+ *
  *
  */
 import backend.MiniEditor;

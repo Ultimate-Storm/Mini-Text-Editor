@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Class used to hold state 
- * @author mukrram
+ *
  *
  */
 public class State implements Subject{

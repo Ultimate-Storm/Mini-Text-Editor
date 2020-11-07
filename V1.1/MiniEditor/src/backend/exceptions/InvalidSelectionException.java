@@ -2,7 +2,7 @@ package backend.exceptions;
 
 /**
  * Custom exception class 
- * @author mukrram
+ *
  *
  */
 public class InvalidSelectionException extends Exception {

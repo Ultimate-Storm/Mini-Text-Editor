@@ -11,7 +11,7 @@ import backend.State;
 
 /**
  * Main CLI (Command line Interface) class 
- * @author mukrram
+ *
  *
  */
 public class MiniEditorTextInterfaceWithCommand implements Observer{
