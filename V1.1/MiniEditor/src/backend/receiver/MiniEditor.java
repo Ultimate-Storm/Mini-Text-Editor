@@ -7,13 +7,13 @@ package backend.receiver;
  */
 public interface MiniEditor
 {
-	public String getBuffer();                       // Method to return buffer content
-	public String getSelection();                    // Method to return current selection
-	public String getClipboard();                    // Method to return content of clipboard
-	public void editorInsert(String substring);      // Method to insert text to Minieditor
-	public void editorSelect(int start, int stop);   // Method to select text from Minieditor
-	public void editorCopy();                        // Method to copy text from Minieditor
-	public void editorCut();                         // Method to cut text from Minieditor
-	public void editorPaste() ;                      // Method to paste text to Minieditor
-	public void editorDelete();                      // Method to delete text from Minieditor
+	String getBuffer();                       // Method to return buffer content
+	String getSelection();                    // Method to return current selection
+	String getClipboard();                    // Method to return content of clipboard
+	void editorInsert(String substring);      // Method to insert text to MiniEditor
+	void editorSelect(int start, int stop);   // Method to select text from MiniEditor
+	void editorCopy();                        // Method to copy text from MiniEditor
+	void editorCut();                         // Method to cut text from MiniEditor
+	void editorPaste() ;                      // Method to paste text to MiniEditor
+	void editorDelete();                      // Method to delete text from MiniEditor
 }

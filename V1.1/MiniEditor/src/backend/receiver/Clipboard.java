@@ -1,7 +1,7 @@
 package backend.receiver;
 
 /**
- * Class to manage contents of clipboard of Minieditor.
+ * Class to manage contents of clipboard of MiniEditor.
  *
  *
  */

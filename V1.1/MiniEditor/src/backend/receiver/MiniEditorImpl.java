@@ -35,15 +35,16 @@ public class MiniEditorImpl implements MiniEditor{
 	}
 
 	@Override
-	public void editorInsert(String substring) {      // Method to insert text to Minieditor
+	public void editorInsert(String substring) {      // Method to insert text to MiniEditor
 		bufferContent = bufferContent.substring(0, selectionStart) + substring + bufferContent.substring(selectionEnd);
 		selectionStart = selectionEnd = selectionStart + substring.length();
 	}
 
 	@Override
-	public void editorSelect(int start, int stop) {   // Method to select text from Minieditor
+	public void editorSelect(int start, int stop) {   // Method to select text from MiniEditor
 		try {
-			if((start >= 0 && start <= bufferContent.length()) && (stop >=0 && stop  <= bufferContent.length()) && (stop >= start)) {
+			if((start >= 0 && start <= bufferContent.length()) && (stop >=0 && stop  <= bufferContent.length()) &&
+					(stop >= start)) {
 				selectionStart = start;
 				selectionEnd = stop;
 			} else {
@@ -55,19 +56,19 @@ public class MiniEditorImpl implements MiniEditor{
 	}
 
 	@Override
-	public void editorCopy() {                         // Method to copy text from Minieditor
+	public void editorCopy() {                         // Method to copy text from MiniEditor
 		if(selectionStart != selectionEnd)
 			clipboard.setContents(bufferContent.substring(selectionStart, selectionEnd));
 	}
 
 	@Override
-	public void editorCut() {                          // Method to cut text from Minieditor
+	public void editorCut() {                          // Method to cut text from MiniEditor
 		editorCopy();
 		editorDelete();
 	}
 
 	@Override
-	public void editorPaste() {                        // Method to paste text to Minieditor
+	public void editorPaste() {                        // Method to paste text to MiniEditor
 		if(!clipboard.isEmpty()) {
 			bufferContent = bufferContent.substring(0, selectionStart) + clipboard.getContents() + bufferContent.substring(selectionEnd);
 			selectionStart = selectionEnd = selectionStart + clipboard.getContents().length();
@@ -75,7 +76,7 @@ public class MiniEditorImpl implements MiniEditor{
 	}
 	
 	@Override
-	public void editorDelete() {                       // Method to delete text from Minieditor
+	public void editorDelete() {                       // Method to delete text from MiniEditor
 		bufferContent = bufferContent.substring(0, selectionStart) + bufferContent.substring(selectionEnd);
 		selectionEnd = selectionStart;
 	}
