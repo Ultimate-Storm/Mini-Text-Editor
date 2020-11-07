@@ -17,7 +17,7 @@ import backend.receiver.MiniEditorImpl;
  *
  */
 public class MiniEditorClient {
-	private MiniEditor editor;                       // Used to get buffer and selection.
+	private final MiniEditor editor;                 // Used to get buffer and selection.
 	private Command cmd;                             // To hold a command object depending on user command.
 	private MiniEditorInvoker invoker;               // Invoker of command design pattern.
 	
