@@ -9,9 +9,9 @@ import backend.exceptions.InvalidSelectionException;
  */
 public class MiniEditorImpl implements MiniEditor{
 
-	private int selectionStart;                  // To hold start of current selection
-	private int selectionEnd;                    // To hold end of current selection
-	private String bufferContent;                // To hold buffer content
+	private int selectionStart;                  	   // To hold start of current selection
+	private int selectionEnd;                    	   // To hold end of current selection
+	private String bufferContent;                	   // To hold buffer content
 	private final Clipboard clipboard;                 // To hold current clipboard content
 	
 	public MiniEditorImpl() {
