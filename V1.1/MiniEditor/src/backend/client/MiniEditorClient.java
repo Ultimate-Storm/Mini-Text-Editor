@@ -1,12 +1,6 @@
 package backend.client;
 
-import backend.command.Command;
-import backend.command.CopyCommand;
-import backend.command.CutCommand;
-import backend.command.DeleteCommand;
-import backend.command.InsertCommand;
-import backend.command.PasteCommand;
-import backend.command.SelectCommand;
+import backend.command.*;
 import backend.invoker.MiniEditorInvoker;
 import backend.receiver.MiniEditor;
 import backend.receiver.MiniEditorImpl;
@@ -19,40 +13,39 @@ import backend.receiver.MiniEditorImpl;
 public class MiniEditorClient {
 	private final MiniEditor editor;                 // Used to get buffer and selection.
 	private Command cmd;                             // To hold a command object depending on user command.
-	private MiniEditorInvoker invoker;               // Invoker of command design pattern.
-	
+
 	public MiniEditorClient() {
 		editor = new MiniEditorImpl();
 	}
+
+	public void assemble(EditorCommand cmd){
+		// Invoker of command design pattern.
+		MiniEditorInvoker invoker = new MiniEditorInvoker(cmd);
+		invoker.action();
+	}
 	public void insert(String text) {
 		cmd = new InsertCommand(text, editor);       // Will be called if user command is I/i
-		invoker = new MiniEditorInvoker(cmd);
-		invoker.action();
+		assemble((EditorCommand) cmd);
 	}
 	public void select(int start, int end) {
 		cmd = new SelectCommand(start, end, editor); // Will be called if user command is S/s
-		invoker = new MiniEditorInvoker(cmd);
-		invoker.action();
+		assemble((SelectCommand) cmd);
 	}
 	public void copy() {
 		cmd = new CopyCommand(editor);               // Will be called if user command is C/c
-		invoker = new MiniEditorInvoker(cmd);
-		invoker.action();
+		assemble((CopyCommand) cmd);
 	}
 	public void cut() {
 		cmd = new CutCommand(editor);                // Will be called if user command is X/x
-		invoker = new MiniEditorInvoker(cmd);
-		invoker.action();
+		assemble((CutCommand) cmd);
 	}
 	public void paste() {
 		cmd = new PasteCommand(editor);             // Will be called if user command is P/p
-		invoker = new MiniEditorInvoker(cmd);
-		invoker.action();
+		assemble((PasteCommand) cmd);
 	}
 	public void delete() {                          // Will be called if user command is D/d
 		cmd = new DeleteCommand(editor);
-		invoker = new MiniEditorInvoker(cmd);
-		invoker.action();
+		assemble((DeleteCommand) cmd);
 	}
 	public String getBufferText() {
 		return editor.getBufferContents();                  // Gets buffer from the receiver.

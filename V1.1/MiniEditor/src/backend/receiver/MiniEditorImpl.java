@@ -7,11 +7,11 @@ import backend.exceptions.InvalidSelectionException;
  *
  *
  */
-public class MiniEditorImpl implements MiniEditor{
+public class MiniEditorImpl implements MiniEditor, Selection{
 
-	private int selectionStart;                  // To hold start of current selection
-	private int selectionEnd;                    // To hold end of current selection
-	private String bufferContent;                // To hold buffer content
+	private int selectionStart;                  	   // To hold start of current selection
+	private int selectionEnd;                    	   // To hold end of current selection
+	private String bufferContent;                	   // To hold buffer content
 	private final Clipboard clipboard;                 // To hold current clipboard content
 	
 	public MiniEditorImpl() {
@@ -79,5 +79,35 @@ public class MiniEditorImpl implements MiniEditor{
 	public void delete() {                       // Method to delete text from MiniEditor
 		bufferContent = bufferContent.substring(0, selectionStart) + bufferContent.substring(selectionEnd);
 		selectionEnd = selectionStart;
+	}
+
+	@Override
+	public int getBeginIndex() {
+		return this.selectionStart;
+	}
+
+	@Override
+	public int getEndIndex() {
+		return this.selectionEnd;
+	}
+
+	@Override
+	public int getBufferBeginIndex() {
+		return 0;
+	}
+
+	@Override
+	public int getBufferEndIndex() {
+		return bufferContent.length()-1;
+	}
+
+	@Override
+	public void setBeginIndex(int beginIndex) {
+		this.selectionStart = beginIndex;
+	}
+
+	@Override
+	public void setEndIndex(int endIndex) {
+		this.selectionEnd = endIndex;
 	}
 }

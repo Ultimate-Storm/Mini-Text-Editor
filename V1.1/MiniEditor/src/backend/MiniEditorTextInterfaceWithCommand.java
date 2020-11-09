@@ -35,6 +35,7 @@ public class MiniEditorTextInterfaceWithCommand {
 						client.insert(userCommand.substring(2));                               // Call insert method of client.
 						System.out.println("Text : " + client.getBufferText());                // Display buffer text after executing command.
 						System.out.println("Selection : " + client.getSelectionText());        // Display selection after executing command.
+						System.out.println("Buffer : " + client.getSelectionText());        // Display selection after executing command.
 					}
 					case "S" -> {
 						String[] userCommandArgs = userCommand.substring(2).split(",");

@@ -5,7 +5,7 @@ package backend.receiver;
  *
  *
  */
-public interface MiniEditor
+public interface MiniEditor extends Selection
 {
 	/**
 	 * Provides the whole contents of the buffer, as a string
