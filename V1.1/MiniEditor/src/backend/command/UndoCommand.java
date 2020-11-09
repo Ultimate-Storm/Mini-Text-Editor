@@ -1,6 +1,6 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 /**
  * UndoCommand class for command design pattern.
  *
@@ -8,7 +8,7 @@ import backend.receiver.MiniEditor;
  */
 public class UndoCommand extends EditorCommand {
 
-	public UndoCommand(MiniEditor editor) {
+	public UndoCommand(Engine editor) {
 		super(editor);
 	}
 	

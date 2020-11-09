@@ -5,8 +5,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import backend.receiver.MiniEditor;
-import backend.receiver.MiniEditorImpl;
+import backend.receiver.Engine;
+import backend.receiver.EngineImpl;
 
 /**
  * To test single commands on miniEditor.
@@ -15,11 +15,11 @@ import backend.receiver.MiniEditorImpl;
  */
 public class SingleOperationTest {
 
-	MiniEditor editor;
+	Engine editor;
 	
 	@Before
 	public void initialize() {
-		editor = new MiniEditorImpl();
+		editor = new EngineImpl();
 	}
 	
 	@Test

@@ -1,6 +1,6 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 
 /**
  * Concrete command of Command design pattern
@@ -11,7 +11,7 @@ public class InsertCommand extends EditorCommand{
 	
 	private final String textToInsert;                      // Text to insert to miniEditor
 	
-	public InsertCommand(String textToInsert, MiniEditor editor) {
+	public InsertCommand(String textToInsert, Engine editor) {
 		super(editor);
 		this.textToInsert = textToInsert;
 	}

@@ -1,10 +1,10 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 
 public class ReplayRecordCommand extends EditorCommand {
 
-	public ReplayRecordCommand(MiniEditor editor) {
+	public ReplayRecordCommand(Engine editor) {
 		super(editor);
 	}
 	

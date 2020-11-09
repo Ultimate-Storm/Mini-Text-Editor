@@ -1,10 +1,10 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 
 public class StartRecordCommand extends EditorCommand {
 
-	public StartRecordCommand(MiniEditor editor) {
+	public StartRecordCommand(Engine editor) {
 		super(editor);
 	}
 	

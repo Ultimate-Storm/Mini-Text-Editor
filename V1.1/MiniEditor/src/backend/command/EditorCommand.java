@@ -1,6 +1,6 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 
 /**
  * It comes between command and concrete command.
@@ -10,9 +10,9 @@ import backend.receiver.MiniEditor;
  */
 public abstract class EditorCommand implements Command{
 
-	protected MiniEditor editor;
+	protected Engine editor;
 	
-	public EditorCommand(MiniEditor editor) {
+	public EditorCommand(Engine editor) {
 		this.editor = editor;
 	}
 }

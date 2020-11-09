@@ -1,13 +1,11 @@
 package backend.receiver;
 
-//import backend.command.Selection;
-
 /**
  * Receiver of command design pattern
  *
  *
  */
-public interface MiniEditor extends Selection {
+public interface Engine extends Selection {
 	/**
 	 * Provides the whole contents of the buffer, as a string
 	 * @return a copy of the buffer's contents

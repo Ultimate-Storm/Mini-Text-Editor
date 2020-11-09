@@ -2,8 +2,8 @@ package backend.client;
 
 import backend.command.*;
 import backend.invoker.MiniEditorInvoker;
-import backend.receiver.MiniEditor;
-import backend.receiver.MiniEditorImpl;
+import backend.receiver.Engine;
+import backend.receiver.EngineImpl;
 
 /**
  * Client of Command design pattern.
@@ -11,11 +11,11 @@ import backend.receiver.MiniEditorImpl;
  *
  */
 public class MiniEditorClient {
-	private final MiniEditor editor;                 // Used to get buffer and selection.
+	private final Engine editor;                 // Used to get buffer and selection.
 	private Command cmd;                             // To hold a command object depending on user command.
 
 	public MiniEditorClient() {
-		editor = new MiniEditorImpl();
+		editor = new EngineImpl();
 	}
 
 	public void assemble(EditorCommand cmd){
@@ -69,6 +69,6 @@ public class MiniEditorClient {
 		editor.setBeginIndex(beginIndex);
 	}
 	public void setEndIndex(int endIndex) {
-		editor.setBeginIndex(endIndex);;
+		editor.setBeginIndex(endIndex);
 	}
 }

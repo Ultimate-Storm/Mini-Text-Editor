@@ -1,6 +1,6 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 
 /**
  * Concrete command of Command design pattern
@@ -9,7 +9,7 @@ import backend.receiver.MiniEditor;
  */
 public class CopyCommand extends EditorCommand{
 	
-	public CopyCommand(MiniEditor editor) {
+	public CopyCommand(Engine editor) {
 		super(editor);
 	}
 	

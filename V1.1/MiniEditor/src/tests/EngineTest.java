@@ -6,25 +6,25 @@ import org.junit.Before;
 import org.junit.Test;
 
 import backend.receiver.Clipboard;
-import backend.receiver.MiniEditor;
-import backend.receiver.MiniEditorImpl;
+import backend.receiver.Engine;
+import backend.receiver.EngineImpl;
 
-public class MiniEditorTest {
+public class EngineTest {
 	
 	private Clipboard c ;
-	private MiniEditor editor;
+	private Engine editor;
 	
 	@Before
 	public void initialize() {
 		c = new Clipboard();
-		editor = new MiniEditorImpl();
+		editor = new EngineImpl();
 	}
 	
 	@Test
 	public void emptyClipBoardTest() {                               // Test for clipboard    
-		Assert.assertEquals(true, c.isEmpty());
+		Assert.assertTrue(c.isEmpty());
 		c.setContents("Test");
-		Assert.assertEquals(false, c.isEmpty());
+		Assert.assertFalse(c.isEmpty());
 	}
 	
 	@Test

@@ -1,6 +1,6 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 
 /**
  * Concrete command of Command design pattern
@@ -12,7 +12,7 @@ public class SelectCommand extends EditorCommand {
 	private final int selectionStart;
 	private final int selectionEnd;
 
-	public SelectCommand(int selectionStart, int selectionEnd, MiniEditor editor) {
+	public SelectCommand(int selectionStart, int selectionEnd, Engine editor) {
 		super(editor);
 		this.selectionStart = selectionStart;
 		this.selectionEnd = selectionEnd;

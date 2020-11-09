@@ -1,10 +1,10 @@
 package backend.command;
 
-import backend.receiver.MiniEditor;
+import backend.receiver.Engine;
 
 public class StopRecordCommand extends EditorCommand {
 
-	public StopRecordCommand(MiniEditor editor) {
+	public StopRecordCommand(Engine editor) {
 		super(editor);
 	}
 	
