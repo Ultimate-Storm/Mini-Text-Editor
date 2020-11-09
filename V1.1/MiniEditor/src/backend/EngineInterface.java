@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import backend.client.Client;
-import backend.receiver.Engine;
 
 /**
  * Front-end
@@ -67,12 +66,7 @@ public class EngineInterface {
 
 	private String parseInput() throws IOException {
 		BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));        // To read input from the console terminal.
-		String userCommand = keyboard.readLine();                                             						  // Input from console
-		while(!userCommand.matches("([Ii][ :].*)|([Ss][ :][\\d]+,[\\d]+)|([CPDXQcpdxq])")) {          // Regex to parse user command
-			System.out.println("===ERROR! Please select valid option===");
-			userCommand = keyboard.readLine();	                                                              // In case of invalid regex, read again
-		}
-		return userCommand;
+		return keyboard.readLine();
 	}
 
 }
