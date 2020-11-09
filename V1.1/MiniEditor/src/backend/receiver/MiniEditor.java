@@ -1,5 +1,7 @@
 package backend.receiver;
 
+//import backend.command.Selection;
+
 /**
  * Receiver of command design pattern
  *
@@ -27,6 +29,7 @@ public interface MiniEditor extends Selection
 	 */
 	void insert(String substring);
 	void editorSelect(int start, int stop);
+//	Selection getSelection();
 
 	/**
 	 * Copies the text within the interval
