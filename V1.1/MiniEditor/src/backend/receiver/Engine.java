@@ -30,6 +30,7 @@ public interface Engine extends Selection {
 	 * into the clipboard.
 	 */
 	void copySelectedText();
+
 	/**
 	 * Removes the text within the interval
 	 * specified by the selection control object,

@@ -50,7 +50,7 @@ public class EngineImpl implements Engine, Selection{
 				throw new IndexOutOfBoundsException();
 			}
 		} catch(IndexOutOfBoundsException e) {
-			System.out.println("ERROR! Invalid selection, selection index must be within the buffer index range");
+			System.out.println("===ERROR! Invalid selection, selection index must be within the buffer index range===");
 		}
 	}
 

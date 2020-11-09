@@ -1,7 +1,7 @@
 package backend.client;
 
 import backend.command.*;
-import backend.invoker.MiniEditorInvoker;
+import backend.invoker.Invoker;
 import backend.receiver.Engine;
 import backend.receiver.EngineImpl;
 
@@ -10,17 +10,17 @@ import backend.receiver.EngineImpl;
  *
  *
  */
-public class MiniEditorClient {
+public class Client {
 	private final Engine editor;                 // Used to get buffer and selection.
 	private Command cmd;                             // To hold a command object depending on user command.
 
-	public MiniEditorClient() {
+	public Client() {
 		editor = new EngineImpl();
 	}
 
 	public void assemble(EditorCommand cmd){
 		// Invoker of command design pattern.
-		MiniEditorInvoker invoker = new MiniEditorInvoker(cmd);
+		Invoker invoker = new Invoker(cmd);
 		invoker.action();
 	}
 	public void insert(String text) {

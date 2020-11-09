@@ -8,7 +8,7 @@ import backend.receiver.Engine;
  */
 public class WriteCommand extends EditorCommand {
 
-	private String filePath;
+	private final String filePath;
 	
 	public WriteCommand(Engine editor, String filePath) {
 		super(editor);

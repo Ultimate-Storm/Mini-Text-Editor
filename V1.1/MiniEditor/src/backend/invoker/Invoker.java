@@ -5,11 +5,11 @@ package backend.invoker;
  */
 import backend.command.Command;
 
-public class MiniEditorInvoker {
+public class Invoker {
 
 	private final Command command;                   // Command to hold concrete command
 	
-	public MiniEditorInvoker(Command command) {
+	public Invoker(Command command) {
 		this.command = command;
 	}
 	

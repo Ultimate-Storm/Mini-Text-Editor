@@ -3,30 +3,27 @@ package backend;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import backend.client.MiniEditorClient;
+import backend.client.Client;
 
 /**
  * Front-end
  *
  *
  */
-public class MiniEditorTextInterfaceWithCommand {
+public class EngineInterface {
 	
 	public static void main(String[] args) {
 	
 		BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));        // To read input from the console terminal.
 		
-		String userCommand = "";
-		MiniEditorClient client = new MiniEditorClient();                                      // Client of Command design Pattern
-		System.out.println("*************************");
-		System.out.println("*Mini-Editor Version 1.0*");
-		System.out.println("*************************");
+		String userCommand;
+		Client client = new Client();                                      // Client of Command design Pattern
 		do {
 			System.out.println("Enter command.[I(Insert)/S(Select)/C(Copy)/P(Paste)/X(Cut)/D(Delete)/Q(Quit)]");                             // Available commands.
 			try {
 				userCommand = keyboard.readLine();                                             						  // Input from console
 				while(!userCommand.matches("([Ii][ :].*)|([Ss][ :][\\d]+,[\\d]+)|([CPDXQcpdxq])")) {          // Regex to parse user command
-					System.out.println("ERROR! Please select valid option");
+					System.out.println("===ERROR! Please select valid option===");
 					userCommand = keyboard.readLine();	                                                              // In case of invalid regex, read again
 				}
 				// Switch on the bases of user command.
@@ -57,7 +54,7 @@ public class MiniEditorTextInterfaceWithCommand {
 						messageDisplay(client.getBufferText(), client.getSelectionText(), client.getBufferBeginIndex(), client.getBufferEndIndex());
 					}
 					case "Q" -> System.exit(1);                                               // Quit when user enters [q/Q] command.
-					default -> System.out.println("ERROR! Please select a valid option.");
+					default -> System.out.println("===ERROR! Please select a valid option===");
 				}
 				System.out.println("----------------------------------");
 			} 
