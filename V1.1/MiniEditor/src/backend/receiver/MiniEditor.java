@@ -53,4 +53,12 @@ public interface MiniEditor extends Selection {
 	 * Removes the contents of the selection in the buffer
 	 */
 	void delete();
+
+	void startRecord();                    // Method to start recording
+	void stopRecord();                     // Method to stop recording
+	void replay();                         // Method to replay recording as many times a suser wants
+	void editorUndo();                           // Method to undo
+	void editorRedo();                           // Method to redo
+	void editorOpen(String filePath);            // Method to read from file
+	void editorWrite(String filePath);           // Method to write to file
 }

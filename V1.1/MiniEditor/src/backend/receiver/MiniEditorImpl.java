@@ -84,6 +84,41 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 	}
 
 	@Override
+	public void startRecord() {
+
+	}
+
+	@Override
+	public void stopRecord() {
+
+	}
+
+	@Override
+	public void replay() {
+
+	}
+
+	@Override
+	public void editorUndo() {
+
+	}
+
+	@Override
+	public void editorRedo() {
+
+	}
+
+	@Override
+	public void editorOpen(String filePath) {
+
+	}
+
+	@Override
+	public void editorWrite(String filePath) {
+
+	}
+
+	@Override
 	public int getBeginIndex() {
 		return this.selectionStart;
 	}
