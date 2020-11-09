@@ -1,7 +1,5 @@
 package backend.receiver;
 
-import backend.exceptions.InvalidSelectionException;
-
 /**
  * Concrete Receiver of command design pattern
  *
@@ -44,15 +42,15 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 	@Override
 	public void editorSelect(int start, int stop) {   // Method to select text from MiniEditor
 		try {
-			if((start >= 0 && start <= bufferContent.length()) && (stop >=0 && stop  <= bufferContent.length()) &&
+			if((start >= 0 && start <= getBufferEndIndex()) && (stop >=0 && stop  <= getBufferEndIndex()) &&
 					(stop >= start)) {
 				setBeginIndex(start);
 				setEndIndex(stop);
 			} else {
-				throw new InvalidSelectionException();
+				throw new IndexOutOfBoundsException();
 			}
-		} catch(InvalidSelectionException ise) {
-			System.out.println("ERROR! Invalid selection.");
+		} catch(IndexOutOfBoundsException e) {
+			System.out.println("ERROR! Invalid selection, selection index must be within the buffer index range");
 		}
 	}
 
@@ -135,7 +133,7 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 
 	@Override
 	public int getBufferEndIndex() {
-		return bufferContent.length()-1;
+		return bufferContent.length();
 	}
 
 	@Override

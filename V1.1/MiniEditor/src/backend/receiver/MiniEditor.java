@@ -14,8 +14,6 @@ public interface MiniEditor extends Selection {
 	 */
 	String getBufferContents();
 
-	String getSelection();
-
 	/**
 	 * Provides the clipboard contents
 	 * @return a copy of the clipboard's contents
@@ -27,8 +25,6 @@ public interface MiniEditor extends Selection {
 	 * @param substring the text to insert
 	 */
 	void insert(String substring);
-	void editorSelect(int start, int stop);
-//	Selection getSelection();
 
 	/**
 	 * Copies the text within the interval

@@ -54,4 +54,18 @@ public interface Selection {
      * @throws IndexOutOfBoundsException if the beginIndex is out of bounds
      */
     void setEndIndex(int endIndex);
+
+    /**
+     * Get the content of current selection
+     *
+     * @return current selection
+     */
+    String getSelection();
+
+    /**
+     * Method to select text from MiniEditor
+     *
+     *
+     */
+    void editorSelect(int start, int stop);
 }
