@@ -53,4 +53,22 @@ public class MiniEditorClient {
 	public String getSelectionText() {
 		return editor.getSelection();               // Gets selection from the receiver.
 	}
+	public int getBeginIndex() {
+		return editor.getBeginIndex();
+	}
+	public int getEndIndex() {
+		return editor.getEndIndex();
+	}
+	public int getBufferBeginIndex() {
+		return editor.getBufferBeginIndex();
+	}
+	public int getBufferEndIndex() {
+		return editor.getBufferEndIndex();
+	}
+	public void setBeginIndex(int beginIndex) {
+		editor.setBeginIndex(beginIndex);
+	}
+	public void setEndIndex(int endIndex) {
+		editor.setBeginIndex(endIndex);;
+	}
 }

@@ -9,7 +9,7 @@ import backend.receiver.MiniEditor;
  */
 public class InsertCommand extends EditorCommand{
 	
-	private String textToInsert;                      // Text to insert to miniEditor
+	private final String textToInsert;                      // Text to insert to miniEditor
 	
 	public InsertCommand(String textToInsert, MiniEditor editor) {
 		super(editor);

@@ -26,7 +26,7 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 
 	@Override
 	public String getSelection() {              // Method to return current selection
-		return bufferContent.substring(selectionStart, selectionEnd) + "[" + selectionStart + "," + selectionEnd + "]";
+		return bufferContent.substring(getBeginIndex(), getEndIndex()) + "[" + getBeginIndex() + "," + getEndIndex() + "]";
 	}
 
 	@Override
@@ -36,8 +36,9 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 
 	@Override
 	public void insert(String substring) {      // Method to insert text to MiniEditor
-		bufferContent = bufferContent.substring(0, selectionStart) + substring + bufferContent.substring(selectionEnd);
-		selectionStart = selectionEnd = selectionStart + substring.length();
+		bufferContent = bufferContent.substring(0, getBeginIndex()) + substring + bufferContent.substring(getEndIndex());
+		setBeginIndex(getBeginIndex() + substring.length());
+		setEndIndex(getBeginIndex());
 	}
 
 	@Override
@@ -45,8 +46,8 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 		try {
 			if((start >= 0 && start <= bufferContent.length()) && (stop >=0 && stop  <= bufferContent.length()) &&
 					(stop >= start)) {
-				selectionStart = start;
-				selectionEnd = stop;
+				setBeginIndex(start);
+				setEndIndex(stop);
 			} else {
 				throw new InvalidSelectionException();
 			}
@@ -57,8 +58,8 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 
 	@Override
 	public void copySelectedText() {                         // Method to copy text from MiniEditor
-		if(selectionStart != selectionEnd)
-			clipboard.setContents(bufferContent.substring(selectionStart, selectionEnd));
+		if(getBeginIndex() != getEndIndex())
+			clipboard.setContents(bufferContent.substring(getBeginIndex(), getEndIndex()));
 	}
 
 	@Override
@@ -70,15 +71,16 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 	@Override
 	public void pasteClipboard() {                        // Method to paste text to MiniEditor
 		if(!clipboard.isEmpty()) {
-			bufferContent = bufferContent.substring(0, selectionStart) + clipboard.getContents() + bufferContent.substring(selectionEnd);
-			selectionStart = selectionEnd = selectionStart + clipboard.getContents().length();
+			bufferContent = bufferContent.substring(0, getBeginIndex()) + clipboard.getContents() + bufferContent.substring(selectionEnd);
+			setBeginIndex(getBeginIndex() + clipboard.getContents().length());
+			setEndIndex(getBeginIndex());
 		}
 	}
 	
 	@Override
 	public void delete() {                       // Method to delete text from MiniEditor
-		bufferContent = bufferContent.substring(0, selectionStart) + bufferContent.substring(selectionEnd);
-		selectionEnd = selectionStart;
+		bufferContent = bufferContent.substring(0, getBeginIndex()) + bufferContent.substring(getEndIndex());
+		setEndIndex(getBeginIndex());
 	}
 
 	@Override
@@ -103,7 +105,11 @@ public class MiniEditorImpl implements MiniEditor, Selection{
 
 	@Override
 	public void setBeginIndex(int beginIndex) {
-		this.selectionStart = beginIndex;
+		try{
+			this.selectionStart = beginIndex;
+		} catch (IndexOutOfBoundsException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
